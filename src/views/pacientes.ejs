@@ -1,0 +1,78 @@
+<%- include('partials/_header') -%>
+
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form action="/ingresar_paciente" method="POST">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="nombre" placeholder="Ingrese Nombre">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="apellido" placeholder="Ingrese Apellido">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="edad" placeholder="Ingrese edad">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="direccion" placeholder="Ingrese direccion">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="telefono" placeholder="Ingrese telefono">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Añadir</button>
+            </form>
+        </div>
+
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Edad</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th>Accion</th>
+                    </tr>
+                    <tbody>
+                    <% for(var i = 0; i < pacientes.length; i++) { %>
+                        <tr>
+                            <td><%= i + 1 %></td>
+                            <td><%= pacientes[i].nombre %></td>
+                            <td><%= pacientes[i].apellido %></td>
+                            <td><%= pacientes[i].edad %></td>
+                            <td><%= pacientes[i].direccion %></td>
+                            <td><%= pacientes[i].telefono %></td>
+                            <td><a href="#" class="btn btn-sm btn-danger">Eliminar</a></td>
+                        </tr>
+                    <% } %>
+                    </tbody>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+
+
+<% include('partials/_footer') %>

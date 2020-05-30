@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const DoctoresSchema =  new Schema({
+const PacientesSchema =  new Schema({
     nombre: String,
     apellido: String,
     edad: Number,
-    colegiado: String,
     direccion: String,
     telefono: Number
 });
 
-module.exports = mongoose.model('doctores', DoctoresSchema);
+module.exports = mongoose.model('pacientes', PacientesSchema);
